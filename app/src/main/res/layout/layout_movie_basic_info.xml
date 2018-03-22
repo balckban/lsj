@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_movie_info"
+    android:layout_width="match_parent"
+    android:layout_height="330dp">
+
+    <ImageView
+        android:id="@+id/iv_blur_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_blur_bg"
+        android:foreground="@drawable/ic_movie_detail_fg"
+        android:scaleType="centerCrop" />
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tv_back"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp"/>
+    <FrameLayout
+        android:id="@+id/fl_movie_img"
+        android:layout_width="110dp"
+        android:layout_height="150dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/padding_14dp"
+        android:background="@color/white"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/iv_movie_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_video_play_big" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fl_movie_img"
+        android:layout_alignTop="@id/fl_movie_img"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/padding_14dp"
+        android:layout_toRightOf="@id/fl_movie_img"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_movie_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/padding_16dp"
+                tools:text="电影名" />
+
+            <ImageView
+                android:id="@+id/iv_win_awards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_6dp"
+                android:src="@drawable/ic_movie_win_awards" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_movie_other_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            tools:text="english name" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_people_judge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:drawableRight="@drawable/ic_arrow_right_gray_bg"
+                android:gravity="center_vertical"
+                android:text="观众评分"
+                android:textColor="#c8c8c8"
+                android:textSize="@dimen/text_12sp" />
+
+
+            <TextView
+                android:id="@+id/tv_movie_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_people_judge"
+                android:layout_marginTop="@dimen/padding_6dp"
+                android:textColor="#ffb400"
+                android:textSize="@dimen/padding_16dp"
+                tools:text="8.5" />
+
+            <TextView
+                android:id="@+id/tv_snum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_movie_score"
+                android:layout_alignTop="@id/tv_movie_score"
+                android:layout_below="@id/tv_people_judge"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_movie_score"
+                android:gravity="center_vertical"
+                android:textColor="#c8c8c8"
+                android:textSize="11sp"
+                tools:text="英语" />
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_movie_score"
+                android:layout_alignTop="@id/tv_people_judge"
+                android:layout_marginBottom="@dimen/padding_6dp"
+                android:layout_marginLeft="@dimen/padding_18dp"
+                android:layout_marginTop="@dimen/padding_6dp"
+                android:layout_toRightOf="@id/tv_snum"
+                android:background="@color/divider_normal" />
+
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_pro_judge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_12dp"
+                android:layout_toRightOf="@id/view_divider"
+                android:drawablePadding="4dp"
+                android:drawableRight="@drawable/ic_arrow_right_gray_bg"
+                android:gravity="center_vertical"
+                android:text="专业评分"
+                android:textColor="@color/text_gray_light"
+                android:textSize="@dimen/text_12sp" />
+
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_pro_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_people_judge"
+                android:layout_marginLeft="@dimen/padding_12dp"
+                android:layout_marginTop="@dimen/padding_6dp"
+                android:layout_toRightOf="@id/view_divider"
+                android:textColor="@color/text_yellow"
+                android:textSize="@dimen/text_16sp"
+                tools:text="8.5" />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_pro_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_movie_score"
+                android:layout_alignTop="@id/tv_movie_score"
+                android:layout_below="@id/tv_people_judge"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_pro_score"
+                android:gravity="center_vertical"
+                android:textColor="@color/text_gray_light"
+                android:textSize="11sp"
+                tools:text="(16.2万人评)" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_movie_type"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_gray_light"
+            android:textSize="@dimen/text_12sp"
+            tools:text="电影类型" />
+
+        <TextView
+            android:id="@+id/tv_src_dur"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_gray_light"
+            android:textSize="@dimen/text_12sp"
+            tools:text="中国大陆/110分钟" />
+
+        <TextView
+            android:id="@+id/tv_pubDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_gray_light"
+            android:textSize="@dimen/text_12sp"
+            tools:text="上映时间" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginLeft="@dimen/padding_14dp"
+        android:layout_marginRight="@dimen/padding_14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ll_favorite"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_play" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_14dp"
+                android:drawablePadding="@dimen/padding_20dp"
+                android:gravity="center"
+                android:text="播放"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_ll_favorite"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_down" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_14dp"
+                android:drawablePadding="@dimen/padding_14dp"
+                android:text="下载"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

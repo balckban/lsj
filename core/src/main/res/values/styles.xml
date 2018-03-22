@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+</style>
+
+    <style name="ToolbarPopupTheme">
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle
+        </item> <!--新增一个item，用于控制menu-->
+        <item name="android:dropDownListViewStyle">@style/AppDropDownListViewStyle</item>
+    </style>
+
+    <style name="AppDropDownListViewStyle" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@color/colorPrimaryDark</item>
+        <item name="android:dividerHeight">1dp</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    </style>
+   
+    <style name="Bottom_sel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="Title_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Title_logo">
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/title_logo</item>
+    </style>
+    <style name="back_logo">
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/selector_back</item>
+    </style>
+    <style name="Title_right_iv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin15</item>
+
+        <item name="android:background">@drawable/cache</item>
+    </style>
+    <style name="Title_down_iv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin15</item>
+        <item name="android:background">@drawable/search_title</item>
+    </style>
+    <style name="Title_more_iv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin15</item>
+
+        <item name="android:background">@drawable/cache</item>
+    </style>
+</resources>

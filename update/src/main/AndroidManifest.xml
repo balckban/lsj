@@ -1,0 +1,37 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.idogs.laosiji.update">
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <receiver
+            android:name="com.idogs.laosiji.update.UpdateReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.powyin.yunbao.update.start" />
+                <action android:name="com.powyin.yunbao.update.progress" />
+                <action android:name="com.powyin.yunbao.update.done" />
+                <action android:name="com.powyin.yunbao.update.error" />
+                <action android:name="com.powyin.yunbao.update.install" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.idogs.laosiji.update"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/updatepath" />
+        </provider>
+    </application>
+
+</manifest>

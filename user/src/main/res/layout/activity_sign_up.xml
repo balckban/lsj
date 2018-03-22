@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".function.main.UserLoginActivity">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#80e0e0e0"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="100dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/login_logo"
+            android:layout_gravity="center"/>
+
+
+        <EditText
+            android:id="@+id/signup_user"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_login_square"
+            android:hint="账户"
+            android:maxLines="1"
+            android:paddingLeft="12dp"
+            android:textColor="@color/colorDeepGray"
+            android:textColorHint="#8B8B7A"
+            android:textSize="18sp"
+            />
+
+
+        <com.idogs.laosiji.user.function.main.widgets.PasswordEditText
+            android:id="@+id/signup_pass"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_login_square"
+            android:hint="密码"
+            android:maxLines="1"
+            android:paddingLeft="12dp"
+            android:textColor="@color/colorDeepGray"
+            android:textColorHint="#8B8B7A"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_login_square"
+            android:text="注册"
+            android:textColor="#8B8B7A"
+            android:textSize="16dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            android:text="注册即表明你同意老司机的条款."
+            android:textColor="#e0e0e0"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_changetologinmode"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:background="@android:color/transparent"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="已经有账户了?  登陆。"
+        />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--折叠TextView-->
+    <declare-styleable name="ExpandTextView">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="maxLine" format="integer" />
+        <attr name="text" format="string" />
+        <attr name="tv_orientation" format="string" >
+            <enum name="ll_horizontal" value="0"/>
+            <enum name="ll_vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

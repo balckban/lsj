@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_sex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="spinner_age">
+        <item>50后</item>
+        <item>60后</item>
+        <item>70后</item>
+        <item>80后</item>
+        <item>90后</item>
+        <item>00后</item>
+        <item>10后</item>
+    </string-array>
+    <string-array name="spinner_trade">
+        <item>金融业</item>
+        <item>生物科技</item>
+        <item>计算机</item>
+        <item>生命科学</item>
+        <item>天文地理</item>
+    </string-array>
+    <string-array name="spinner_bank">
+        <item>工商银行</item>
+        <item>农业银行</item>
+        <item>建设银行</item>
+        <item>交通银行</item>
+        <item>中国银行</item>
+    </string-array>
+    <string-array name="spinner_cartag">
+        <item>浙</item>
+        <item>京</item>
+        <item>沪</item>
+        <item>豫</item>
+        <item>苏</item>
+    </string-array>
+    <string-array name="spinner_carcolor">
+        <item>黑色</item>
+        <item>蓝色</item>
+        <item>白色</item>
+        <item>银色</item>
+    </string-array>
+    <string-array name="spinner_carmodel">
+        <item>宝马</item>
+        <item>奔驰</item>
+        <item>奥迪</item>
+        <item>红旗</item>
+</string-array>
+</resources>

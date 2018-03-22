@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--clipToPadding = false-->
+    <!--令布局可以延伸到状态栏-->
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/sc_movie_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+            >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <include layout="@layout/layout_movie_basic_info" />
+
+
+                    <com.idogs.laosiji.basic.view.ExpandTextView
+                        android:id="@+id/expandText_movie_Desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="@dimen/dp_14"
+                        app:maxLine="3"
+                        app:textColor="@color/text_primary"/>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_14"
+                        android:background="@color/divider_normal" />
+
+                   <include layout="@layout/layout_movie_date" />
+
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <include layout="@layout/layout_movie_detail_title" />
+
+
+</FrameLayout>
+
+
+
+
+
+
+

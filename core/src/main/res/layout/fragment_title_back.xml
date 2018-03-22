@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_title_rl"
+    style="@style/Title_layout">
+
+    <ImageView
+        android:id="@+id/back_finish"
+        android:paddingRight="13dp"
+        style="@style/back_logo" />
+
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/fragment_cache_right"-->
+        <!--android:layout_toLeftOf="@+id/fragment_down_right"-->
+        <!--style="@style/Title_right_iv" />-->
+
+
+
+</RelativeLayout>
+
+
+

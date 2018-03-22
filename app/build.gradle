@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+
+
+ext.majorNumber = 1
+ext.minorNumber = 0
+ext.revisionNumber = 'git rev-list HEAD --count'.execute().getText().trim().toInteger()
+ext.tempRevisionDescription = 'git describe --always'.execute().getText().trim()
+ext.revisionDescription = (tempRevisionDescription == null
+        || (tempRevisionDescription).size() == 0) ?
+        new Date().format("yyMMdd") :
+        tempRevisionDescription
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode getVersionCode(false)
+        versionName getVersionName(false)
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","arm64-v8a","x86_64"
+        }
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+
+    signingConfigs {
+        config {
+            storeFile file("../idogs-android.jks")
+            storePassword "idogs123"
+            keyAlias "idogs"
+            keyPassword "idogs123"
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            signingConfig signingConfigs.config
+            applicationIdSuffix ".debug"
+        }
+
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            shrinkResources false
+            //Zip代码压缩优化
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/rxjava.properties'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation', 'ExtraTranslation'
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.2'
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name == 'release') {
+            variant.mergedFlavor.versionCode = getVersionCode(true)
+            variant.mergedFlavor.versionName = getVersionName(true)
+        } else if (variant.buildType.name == 'debug') {
+            variant.mergedFlavor.versionCode = getVersionCode(false)
+            variant.mergedFlavor.versionName = getVersionName(false)
+        }
+        println(variant.buildType.name + "version code is --->" + variant.mergedFlavor.versionCode)
+        println(variant.buildType.name + "version name is --->" + variant.mergedFlavor.versionName)
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile project(":update")
+    compile project(":pay")
+    compile project(":user")
+
+
+    annotationProcessor rootProject.ext.apt["dagger-compiler"]
+    annotationProcessor rootProject.ext.apt["butterknife-compiler"]
+    annotationProcessor rootProject.ext.apt["dbflow-processor"]
+    annotationProcessor rootProject.ext.apt["arouter-compiler"]
+}
+
+def getVersionCode(boolean isRelease) {
+    // 正式环境
+    if (isRelease) {
+        majorNumber * 1000000 + minorNumber * 10000 + revisionNumber
+    }
+    // debug环境
+    else {
+        Integer.parseInt(new Date().format("yyMMddHHmm"))
+    }
+}
+
+//Major_Version_Number.Minor_Version_Number[Revision_Number[.Build_Number]]
+def getVersionName(boolean isRelease) {
+    // 正式环境
+    if (isRelease) {
+        majorNumber + "." + minorNumber + "." + revisionNumber + "." + revisionDescription
+    }
+    // debug环境
+    else {
+        String today = new Date().format("yyMMdd")
+        String time = new Date().format("HHmmss")
+        majorNumber + "." + minorNumber + "." + revisionNumber + ".$today.$time." + revisionDescription
+    }
+}

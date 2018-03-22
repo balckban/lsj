@@ -1,0 +1,82 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+    </style>
+    <!--************************************************************************-->
+
+    <!--公共样式-->
+    <style name="parent_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--公共样式2-->
+    <style name="parent_style2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--公共样式3-->
+    <style name="parent_style3">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--分割线样式-横-->
+    <style name="line_rest">
+        <item name="android:background">@color/gray2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/line_size</item>
+    </style>
+
+    <!--分割线样式-竖-->
+    <style name="line_rest2">
+        <item name="android:background">@color/gray2</item>
+        <item name="android:layout_width">@dimen/line_size</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--************************************************************************-->
+    <style name="home_style" parent="parent_style2">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selector_gray_bg</item>
+        <item name="android:textColor">@drawable/selector_black_text</item>
+    </style>
+
+    <!--标准字体样式-->
+    <style name="text_style" parent="parent_style" >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_14sp</item>
+    </style>
+    <style name="text_style2" parent="parent_style3" >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_14sp</item>
+    </style>
+
+
+
+    <!--************************************************************************-->
+    <!--自定义dialog背景全透明无边框theme -->
+    <style name="MyDialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

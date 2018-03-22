@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">User</string>
+    <string name="user_phone">手机号码</string>
+    <string name="user_send_mesg">获取验证码</string>
+    <string name="user_send_mesg_second_invalid">倒计时时间不能小于0秒</string>
+    <string name="oid_type">油卡类型</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#191919</color>
+    <color name="colorPrimaryDark">#191919</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorBlack">#FF000000</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorGray">#33FFFFFF</color>
+    <color name="colorDeepGray">#F21A1A1B</color>
+    <color name="colorWarmBlue">#FF187CEB</color>
+    <color name="colorLessBrightBlue">#FF303F9F</color>
+    <color name="colorShallowGray">#FF4B4B4B</color>
+    <color name="colorDeepWhite">#FF979797</color>
+    <color name="colorWarmBlack">#FF323232</color>
+    <color name="colorGoldenYellow">#FFFFD117</color>
+    <color name="colorOrangleYellow">#FFFF4900</color>
+    <color name="colorSeaBlue">#FF0866E3</color>
+    <color name="colorMilkWhite">#FFF9F9FB</color>
+    <color name="colorBlackGray">#ff6c6c6c</color>
+    <color name="colorYellowGreen">#FF75BB35</color>
+    <color name="colorShallowBlack">#ff191919</color>
+    <color name="colorSkyBlue">#3F8DD5</color>
+    <color name="colorMilkBlack">#323232</color>
+    <color name="font_white">#FFF9F9FB</color>
+    <color name="shape_gary_bg">#FFF9F9FB</color>
+    <color name="colorDeepSeaBlue">#0f83e6</color>
+    <color name="color1">#336666</color>
+    <color name="color2">#003399</color>
+    <color name="color3">#7B1FA2</color>
+    <color name="color4">#F8BBD0</color>
+    <color name="color5">#003366</color>
+    <color name="color6">#663366</color>
+
+</resources>

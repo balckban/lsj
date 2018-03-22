@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Widget</string>
+    <string name="approve_1">请等待后台审核</string>
+    <string name="approve_2">审核时间为2个工作日</string>
+
+    <string name="btn_ok">确&#160;&#160;认</string>
+    <string name="btn_cancel">取消</string>
+</resources>

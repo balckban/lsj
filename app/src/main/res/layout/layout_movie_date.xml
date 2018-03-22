@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_dates"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_14"
+        android:text="选集"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider_normal" />
+
+    <cn.iwgang.familiarrecyclerview.FamiliarRecyclerView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/rv_movie_date"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:frv_dividerHeight="1dp"
+        app:frv_footerDividersEnabled="true"
+        app:frv_headerDividersEnabled="true"
+        app:frv_layoutManager="grid"
+        app:frv_layoutManagerOrientation="vertical"
+        android:nestedScrollingEnabled="false"
+        app:frv_spanCount="5"  />
+
+    <View
+        android:background="@color/divider_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_14"/>
+
+
+</LinearLayout>

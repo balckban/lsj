@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="tag_position"></item>
+    <item type="id" name="id_tab_txt">888</item>
+    <item type="id" name="suc">1</item>
+    <item type="id" name="fail">0</item>
+    <item name="viewpager_inner" type="id"/>
+    <item type="id" name="framLayoutId">false</item>
+    <item type="id" name="glide_tag" />
+    <item name="cb_item_tag" type="id"></item>
+    <item name="title_layout_one" type="id"></item>
+    <item name="title_layout_two" type="id"></item>
+
+
+
+
+</resources>
